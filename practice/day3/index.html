@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobTracker – Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo">JobTracker</a>
+    <nav class="nav-links">
+      <a href="#">Dashboard</a>
+      <a href="#add">Add application</a>
+      <button class="btn">Log out</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Welcome back, Nushith</h1>
+    <p class="subtitle">Here's how your job search is going.</p>
+
+    <!-- JavaScript fills this -->
+    <section class="stats" id="stats"></section>
+
+    <!-- ADD FORM -->
+    <section id="add">
+      <h2>Add application</h2>
+      <form class="app-form" id="app-form">
+        <input name="company" placeholder="Company" required>
+        <input name="role" placeholder="Role" required>
+        <select name="status">
+          <option value="applied">Applied</option>
+          <option value="interview">Interview</option>
+          <option value="offer">Offer</option>
+          <option value="rejected">Rejected</option>
+        </select>
+        <input name="source" placeholder="Source (LinkedIn, Referral…)">
+        <button type="submit" class="btn">Add</button>
+      </form>
+      <p class="message" id="message"></p>
+    </section>
+
+    <!-- APPLICATIONS -->
+    <section>
+      <h2>Applications</h2>
+      <div class="toolbar">
+        <button class="filter-btn active" data-status="all">All</button>
+        <button class="filter-btn" data-status="applied">Applied</button>
+        <button class="filter-btn" data-status="interview">Interview</button>
+        <button class="filter-btn" data-status="offer">Offer</button>
+        <button class="filter-btn" data-status="rejected">Rejected</button>
+        <button class="btn" id="load-btn">Load from server</button>
+      </div>
+      <!-- JavaScript fills this -->
+      <div class="cards" id="cards"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built by Nushith · JobTracker</p>
+  </footer>
+
+  <!-- load JavaScript LAST, after the HTML exists -->
+  <script src="app.js"></script>
+</body>
+</html>
